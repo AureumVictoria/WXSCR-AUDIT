@@ -9,7 +9,7 @@
  *
  **/
 
-pragma solidity ^0.6.12;
+pragma solidity 0.6.12;
 
 interface IWhitelist {
     function isWhitelisted(address _user) external view returns (bool);
