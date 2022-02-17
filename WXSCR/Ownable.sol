@@ -11,11 +11,10 @@
  *
  **/
 
-pragma solidity ^0.6.12;
+pragma solidity 0.6.12;
 
 import "./Context.sol";
 
-// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
 abstract contract Ownable is Context {
     address private _owner;
 
