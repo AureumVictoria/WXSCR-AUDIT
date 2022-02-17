@@ -9,7 +9,7 @@
  *
  **/
 
-pragma solidity ^0.6.12;
+pragma solidity 0.6.12;
 
 interface IReferrals {
     function getSponsor(address account) external view returns (address);
