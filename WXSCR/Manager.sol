@@ -9,7 +9,7 @@
  *
  **/
 
-pragma solidity ^0.6.12;
+pragma solidity 0.6.12;
 
 import "./Ownable.sol";
 import "./MinterRole.sol";
@@ -236,7 +236,7 @@ contract Manager is Ownable {
             "SAFETY FIRST || proxyBlockTimelock can only be bigger than last blockTimelock"
         );
         require(
-            _setProxyBlockTimelock <= 864000,
+            _setProxyBlockTimelock <= 30 days,
             "SAFETY FIRST || proxyBlockTimelock greater than 30 days"
         );
         proxyBlockTimelock = _setProxyBlockTimelock;
@@ -359,6 +359,6 @@ contract Manager is Ownable {
             "SAFETY FIRST || safetyTimelock smaller than current block"
         );
         securusProxy = ISecurusProxy(newSecurusProxyContract);
-        proxyBlockTimelock = 28800; //Set the update time back to 1 day in case there is an error and you need to intervene quickly.
+        proxyBlockTimelock = 1 days; //Set the update time back to 1 day in case there is an error and you need to intervene quickly.
     }
 }
