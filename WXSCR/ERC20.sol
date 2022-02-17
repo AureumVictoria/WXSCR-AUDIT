@@ -11,7 +11,7 @@
  *
  **/
 
-pragma solidity ^0.6.12;
+pragma solidity 0.6.12;
 
 import "./Context.sol";
 import "./IERC20.sol";
@@ -295,7 +295,7 @@ contract ERC20 is Context, IERC20, Pausable, Manager, MintRole {
 
         if (
             (zeroFee.isZeroFeeSender(msg.sender) == false && fee > 0) ||
-            (zeroFee.isZeroFeeRecipient(recipient) && fee > 0)
+            (zeroFee.isZeroFeeRecipient(recipient) == false && fee > 0)
         ) {
             uint256 feeamount = amount.mul(fee).div(10000);
             uint256 feeamountRefs = feeamount;
